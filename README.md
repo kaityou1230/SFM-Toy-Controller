@@ -20,7 +20,7 @@ To use this tool, you will need all of the following software installed and conf
 
 + BepInEx
 
-+ SFMToyWebsocket
++ [SFMToyWebsocket](https://github.com/Henry1887/SFMToyWebsocket)
 
 + Intiface Central
 
@@ -35,7 +35,7 @@ Download the latest .zip file (e.g., SFM-Toy-Controller-v1.0.0.zip).
 Extract the downloaded zip file to a location of your choice.
 
 ## Usage
-1. Launch Intiface Central and ensure its server is running (it should say "Scanning for devices...").
+1. Launch Intiface Central and ensure its server is running.
 
 2. Open the extracted folder and run Toy_Controller.exe (or a similarly named executable file).
 
