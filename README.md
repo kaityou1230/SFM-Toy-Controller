@@ -2,9 +2,10 @@
 
 A tool to connect SecretFlasherManaka with Intiface Central, allowing for real-time control of supported toys.
 
-This application listens for in-game events sent by the SFMToyWebsocket BepInEx plugin (created by Henry1887) and controls devices connected to Intiface.
+This application listens for in-game events sent by the [SFMToyWebsocket](https://github.com/Henry1887/SFMToyWebsocket) BepInEx plugin (created by Henry1887) and controls devices connected to Intiface.
 
-https://github.com/Henry1887/SFMToyWebsocket
+This tool has been tested and works with the OSR2 and The Handy.  
+Vibration support is also included, but since I don't have a vibe device, it's currently untested. If you try it, please let me know if it works!
 
 ## Features
 + Real-time Game Integration: Automatically controls piston and vibration functions based on in-game events.
