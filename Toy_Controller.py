@@ -102,9 +102,9 @@ def load_config():
         vibe_as_piston_pos_min = vaps_range.get("min", 0.0)
         vibe_as_piston_pos_max = vaps_range.get("max", 0.8)
 
-        logging.info(f"{CONFIG_FILE} を正常に読み込みました。")
+        logging.info(f"{CONFIG_FILE} was loaded successfully.")
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        logging.warning(f"{CONFIG_FILE} が読み込めませんでした ({e})。デフォルト設定で新しいファイルを作成します。")
+        logging.warning(f"Failed to load {CONFIG_FILE}  ({e}). A new file will be created with default settings.")
         save_config()
 
 # --- 点滅マネージャー ---
@@ -210,7 +210,7 @@ async def piston_worker():
                 target_position = piston_pos_min if target_position == piston_pos_max else piston_pos_max
                 await asyncio.sleep(interval)
             elif current_piston_mode == 0 and not is_homed and actuator:
-                logging.info("ピストンモードがオフのため、ホームポジションに戻ります。")
+                logging.info("Piston mode is off. Returning to home position.")
                 await actuator.command(position=0.5, duration=700)
                 is_homed = True
                 target_position = piston_pos_max
@@ -353,7 +353,7 @@ async def game_websocket_listener(page: ft.Page, game_status: ft.Text, piston_mo
                         current_piston_mode = new_piston_mode; current_vibe_mode = new_vibe_mode
                         page.update()
         except asyncio.CancelledError: break
-        except Exception: logging.warning(f"ゲームMODへの接続に失敗。5秒後に再接続します。"); await asyncio.sleep(5)
+        except Exception: logging.warning(f"Failed to connect to the game mod. Retrying in 5 seconds."); await asyncio.sleep(1)
     pulsing_manager.remove(game_status)
 
 # --- Intiface/UI管理 ---
@@ -837,8 +837,8 @@ async def main(page: ft.Page):
     async def on_disconnect_handler(e):
         global cli, is_shutting_down
         if is_shutting_down: return
-        is_shutting_down = True; logging.info("最終設定を保存します。"); save_config()
-        logging.info("切断イベント受信。クリーンアップ処理を開始します。"); pulsing_manager.clear()
+        is_shutting_down = True; logging.info("Saving final configuration."); save_config()
+        logging.info("Disconnect event received. Starting cleanup process."); pulsing_manager.clear()
         tasks_to_cancel = list(background_tasks)
         for task in tasks_to_cancel:
             if not task.done(): task.cancel()
@@ -846,7 +846,7 @@ async def main(page: ft.Page):
         if cli and cli.connected:
             try: await cli.disconnect()
             except Exception as ex: logging.error(f"クリーン切断中のエラー: {ex}")
-        logging.info("クリーンアップ完了。")
+        logging.info("Cleanup complete.")
 
     page.on_disconnect = on_disconnect_handler
     game_args = (page, game_status_value, piston_mode_display, vibe_mode_display)
