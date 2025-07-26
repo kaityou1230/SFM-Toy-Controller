@@ -31,7 +31,7 @@ Please set up all the prerequisites listed above. It is crucial that SFMToyWebso
 
 Navigate to the Releases page on the right side of this repository.
 
-Download the latest .zip file (e.g., SFM-Toy-Controller-v1.0.0.zip).
+Download the latest .zip file.
 
 Extract the downloaded zip file to a location of your choice.
 
