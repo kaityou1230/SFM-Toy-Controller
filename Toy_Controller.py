@@ -62,7 +62,7 @@ def save_config():
     try:
         with open(CONFIG_FILE, 'w') as f:
             json.dump(config_data, f, indent=4)
-        logging.info(f"設定を {CONFIG_FILE} に保存しました。")
+        #logging.info(f"設定を {CONFIG_FILE} に保存しました。")
     except Exception as e:
         logging.error(f"設定ファイルの保存中にエラーが発生しました: {e}")
 
