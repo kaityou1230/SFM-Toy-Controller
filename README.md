@@ -19,21 +19,19 @@ Vibration support is also included, but since I don't have a vibe device, it's c
 ## Prerequisites
 To use this tool, you will need all of the following software installed and configured:
 
-+ BepInEx
++ [BepInEx for IL2CPP (x64)](https://builds.bepinex.dev/projects/bepinex_be)
 
 + [SFMToyWebsocket](https://github.com/Henry1887/SFMToyWebsocket)
 
-+ Intiface Central
++ [Intiface Central](https://intiface.com/central/)
 
 
 ## Installation
-Please set up all the prerequisites listed above. It is crucial that SFMToyWebsocket is correctly installed in your game.
+1. **Install BepInEx**: Download and install the latest **BepInEx for IL2CPP (x64)** into your　main game folder.
 
-Navigate to the Releases page on the right side of this repository.
+2. **Install SFMToyWebsocket**: Copy `SFMToyWebsocket.dll` and `websocket-sharp.dll` into `BepInEx/plugins/` folder.
 
-Download the latest .zip file.
-
-Extract the downloaded zip file to a location of your choice.
+3. **Download SFM-Toy-Controller**: Download the latest .zip file. Place the `Toy_Controller.exe` anywhere on your PC.
 
 ## Usage
 1. Launch Intiface Central and ensure its server is running.
