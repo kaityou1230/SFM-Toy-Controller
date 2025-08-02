@@ -21,17 +21,17 @@ To use this tool, you will need all of the following software installed and conf
 
 + [BepInEx for IL2CPP (x64)](https://builds.bepinex.dev/projects/bepinex_be)
 
-+ [SFMToyWebsocket](https://github.com/Henry1887/SFMToyWebsocket)
-
 + [Intiface Central](https://intiface.com/central/)
 
 
 ## Installation
-1. **Install BepInEx**: Download and install the latest **BepInEx for IL2CPP (x64)** into your　main game folder.
+1. **Install BepInEx**: Download and install the latest **BepInEx for IL2CPP (x64)** into your main game folder.
 
-2. **Install SFMToyWebsocket**: Copy `SFMToyWebsocket.dll` and `websocket-sharp.dll` into `BepInEx/plugins/` folder.
+2. Download the latest .zip file from the releases page.
 
-3. **Download SFM-Toy-Controller**: Download the latest .zip file. Place the `Toy_Controller.exe` anywhere on your PC.
+3. Unzip the file. Place Toy_Controller.exe anywhere on your PC.
+
+4. Copy the BepInEx folder from the zip file and place it directly into your main game folder.
 
 ## Usage
 1. Launch Intiface Central and ensure its server is running.
